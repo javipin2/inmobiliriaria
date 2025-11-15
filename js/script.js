@@ -315,3 +315,53 @@ window.addEventListener('scroll', () => {
         }, 1000);
     }
 });
+
+// Formulario de contacto - Envío a WhatsApp
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevenir el envío por defecto del formulario
+
+        // Obtener los valores del formulario
+        const nombreCompleto = document.getElementById('nombreCompleto').value.trim();
+        const numeroContacto = document.getElementById('numeroContacto').value.trim();
+        const transaccion = document.getElementById('transaccion').value;
+        const ubicacion = document.getElementById('ubicacion').value.trim();
+
+        // Validar que todos los campos estén llenos
+        if (!nombreCompleto || !numeroContacto || !transaccion || !ubicacion) {
+            alert('Por favor, completa todos los campos del formulario.');
+            return;
+        }
+
+        // Formatear el nombre de la transacción
+        const transaccionTexto = transaccion.charAt(0).toUpperCase() + transaccion.slice(1);
+
+        // Construir el mensaje para WhatsApp
+        const mensaje = `Hola, me gustaría solicitar información sobre una propiedad.
+
+*Datos del contacto:*
+• Nombre: ${nombreCompleto}
+• Teléfono: ${numeroContacto}
+• Tipo de transacción: ${transaccionTexto}
+• Ubicación de interés: ${ubicacion}
+
+Gracias por su atención.`;
+
+        // Número de WhatsApp (sin espacios ni caracteres especiales)
+        const whatsappNumber = '34651640323';
+
+        // Codificar el mensaje para la URL
+        const mensajeCodificado = encodeURIComponent(mensaje);
+
+        // Construir la URL de WhatsApp
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
+
+        // Abrir WhatsApp en una nueva ventana
+        window.open(whatsappUrl, '_blank');
+
+        // Opcional: Limpiar el formulario después de enviar
+        contactForm.reset();
+    });
+}
