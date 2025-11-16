@@ -773,7 +773,7 @@ body {
 
 /* Contact Section - Profile Layout */
 .contact {
-    background: #a0a0a0;
+    background: #adadad;
 }
 
 .con {
@@ -1401,7 +1401,7 @@ body {
 }
 
 .formulario-form-title {
-    font-family: 'Aboreto', serif;
+    font-family: 'Poppins', serif;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 2px;
