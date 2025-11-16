@@ -1,65 +1,12 @@
 // Array con los datos de los testimonios
 const testimonials = [
-    {
-        name: "Diva Blogs",
-        date: "2025-06-15",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjVHk6hj-0pW3pgFYpvF3C-596tOkl4Oegqo2ypTF8VOLAA0ckMZ=w72-h72-p-rp-mo-ba3-br100",
-        comment: "Excelente trabajo en la marca para mi negocio... muchas gracias , el logo quedo hermoso"
-    },
-    {
+    /*{
         name: "Maria Grau",
         date: "2025-04-10",
         image: "https://ui-avatars.com/api/?name=Milvia+gstetica&background=e91e63&color=fff&size=100",
         comment: "Excelente servicio, cumplieron con todas mis expectativas, muy contenta con todo, súper recomendado."
-    },
-    {
-        name: "Zahratt Gerencia",
-        date: "2025-06-03",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXzUxGGVTXMn2pYrMYO4qaSU8H4-35Q5ZqYTReyfTw5XaG9eMr6=w72-h72-p-rp-mo-br100",
-        comment: "Me encantó el trabajo de la empresa Dariana es muy Creativa"
-    },
-    {
-        name: "Dayana Palmar",
-        date: "2024-09-11",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjUOzc7-umIKdaXiT0D4SAtN_UVUOsD-62iC16zrb1BALKlXGBYQOw=w72-h72-p-rp-mo-br100",
-        comment: "Excelente atención al cliente y te ayudan a crecer en tu negocio."
-    },
-    {
-        name: "Juan José Atencio",
-        date: "2024-10-01",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjUeZgSj38w56LwsrdmylVtJ_zYzvbRdj32epaAgD6dp88Cfen9uhQ=w72-h72-p-rp-mo-br100",
-        comment: "Excelente experiencia , fortalece los conocimiento para la creación de contenido."
-    },
-    {
-        name: "Carlos Ochoa",
-        date: "2024-09-22",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXrUErTl4jLk134rmYPETnpjTze7Gc100RaNo4esHraLtDrbdlx=w72-h72-p-rp-mo-br100",
-        comment: "Excelente el servicio."
-    },
-    {
-        name: "Julene Torres",
-        date: "2024-10-10",
-        image: "https://ui-avatars.com/api/?name=j+t&background=e91e63&color=fff&size=100",
-        comment: "Excelente calidad de servicio y producto! 100% recomendado."
-    },
-    {
-        name: "Juan José Atencio",
-        date: "2024-10-07",
-        image: "https://ui-avatars.com/api/?name=j+a&background=e91e63&color=fff&size=100",
-        comment: "magnífico trato y dedicación muy agradecido con ellos por ayudarme a construir mis sueños."
-    },
-    {
-        name: "Lina marcela vega",
-        date: "2024-07-09",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjV4m4k1eor7jn1HAt6NOH68x8AbBPRi6wp_Dx_zXB4XDJ05LxbOdQ=w72-h72-p-rp-mo-br100",
-        comment: "Recomendado 10/10"
-    },
-    {
-        name: "Yunelis Muñoz",
-        date: "2024-09-18",
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjUoQCTHzNyB9suV-_wE3npKFkm8Q3mtMPkBN_Lnv3pDdd6wV97R=w72-h72-p-rp-mo-br100",
-        comment: ""
-    },
+    }*/
+
 ];
 
 // Función para formatear la fecha
@@ -99,11 +46,24 @@ function createTestimonialCard(testimonial) {
 let currentIndex = 0;
 const SLIDE_GAP_PX = 30; // debe coincidir con el gap del track en CSS
 
+// Ancho estándar para las tarjetas
+const STANDARD_CARD_WIDTH = {
+    mobile: 350,   // móvil
+    tablet: 400,   // tablet
+    desktop: 420   // desktop
+};
+
 function getVisibleCount() {
     // 3 en desktop, 2 en tablet, 1 en móvil
     if (window.innerWidth <= 640) return 1;
     if (window.innerWidth <= 1024) return 2;
     return 3;
+}
+
+function getStandardCardWidth() {
+    if (window.innerWidth <= 640) return STANDARD_CARD_WIDTH.mobile;
+    if (window.innerWidth <= 1024) return STANDARD_CARD_WIDTH.tablet;
+    return STANDARD_CARD_WIDTH.desktop;
 }
 
 function layoutAndUpdate(track) {
@@ -112,11 +72,26 @@ function layoutAndUpdate(track) {
     const visible = getVisibleCount();
     const slides = Array.from(track.children);
 
-    // calcular el ancho exacto de cada slide para que quepan completas
-    const totalGap = SLIDE_GAP_PX * (visible - 1);
-    const slideWidth = Math.max(0, Math.floor((viewport.clientWidth - totalGap) / visible));
+    const prevBtn = document.getElementById('prevTestimonials');
+    const nextBtn = document.getElementById('nextTestimonials');
+
+    // Ocultar botones si no hay slides o si todas las tarjetas caben en la pantalla
+    if (slides.length === 0 || slides.length <= visible) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+    }
+
+    // Mostrar botones si hay suficientes slides para desplazar
+    if (prevBtn) prevBtn.style.display = 'flex';
+    if (nextBtn) nextBtn.style.display = 'flex';
+
+    // Usar ancho estándar para las tarjetas
+    const standardWidth = getStandardCardWidth();
     slides.forEach(function (slide) {
-        slide.style.width = slideWidth + 'px';
+        slide.style.width = standardWidth + 'px';
+        slide.style.minWidth = standardWidth + 'px';
+        slide.style.maxWidth = standardWidth + 'px';
         slide.style.flex = '0 0 auto';
     });
     track.style.gap = SLIDE_GAP_PX + 'px';
@@ -125,12 +100,10 @@ function layoutAndUpdate(track) {
     if (currentIndex > maxIndex) currentIndex = maxIndex;
     if (currentIndex < 0) currentIndex = 0;
 
-    const offset = -(currentIndex * (slideWidth + SLIDE_GAP_PX));
+    const offset = -(currentIndex * (standardWidth + SLIDE_GAP_PX));
     track.style.transform = `translateX(${offset}px)`;
     track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
 
-    const prevBtn = document.getElementById('prevTestimonials');
-    const nextBtn = document.getElementById('nextTestimonials');
     if (prevBtn && nextBtn) {
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex === maxIndex;
@@ -140,12 +113,21 @@ function layoutAndUpdate(track) {
 function renderTestimonials() {
     const track = document.getElementById('testimonialsTrack');
     if (!track) return;
+    
+    const prevBtn = document.getElementById('prevTestimonials');
+    const nextBtn = document.getElementById('nextTestimonials');
+    
+    // Ocultar botones si no hay testimonios
+    if (testimonials.length === 0) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+    }
+    
     track.innerHTML = testimonials.map(function (t) { return `<div class="carousel-slide">${createTestimonialCard(t)}</div>`; }).join('');
     currentIndex = 0;
     layoutAndUpdate(track);
 
-    const prevBtn = document.getElementById('prevTestimonials');
-    const nextBtn = document.getElementById('nextTestimonials');
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener('click', function () {
             currentIndex -= 1;

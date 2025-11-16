@@ -31,7 +31,7 @@ body {
 }
 
 .espacios {
-    padding: 15% 0 !important;
+    padding: 5% 0 !important;
 }
 
 /* Container */
@@ -78,7 +78,7 @@ body {
 }
 
 .hero-logo img {
-    height: 90px;
+    height: 80px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -128,7 +128,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('https://ext.same-assets.com/1748467512/1473332814.jpeg') center/cover no-repeat fixed;
+    background: url('https://rmackdiseno.com/wp-content/uploads/2024/09/DECORACION-E-INTERIORISMO-3-1024x576.jpg') center/cover no-repeat fixed;
     text-align: center;
     color: white;
     padding-top: 0;
@@ -140,7 +140,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(50, 48, 56, 0.85) 0%, rgba(72, 180, 213, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(50, 48, 56, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .hero-content {
@@ -362,7 +362,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(50, 48, 56, 0.8) 0%, transparent 100%);
+    background: #0000004f;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -393,7 +393,7 @@ body {
 
 /* Properties Section */
 .properties {
-    padding: 15% 0 10% 0;
+    padding: 7% 0 7% 0;
     background: white;
 }
 
@@ -928,9 +928,10 @@ body {
 }
 
 .footer-contacts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    flex-wrap: wrap;
 }
 
 .footer-contact h4 {
@@ -1024,7 +1025,7 @@ body {
     }
 
     .hero-logo img {
-        height: 70px;
+        height: 60px;
     }
 
     .hero-instagram {
@@ -1168,7 +1169,7 @@ body {
     }
 
     .hero-logo img {
-        height: 60px;
+        height: 50px;
     }
 
     .hero-instagram {
@@ -1307,18 +1308,25 @@ body {
     position: relative;
 }
 
+.formulario-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
 .formulario-content {
-    max-width: 700px;
-    margin: 0 auto 80px;
+    max-width: 100%;
+    margin: 0;
     position: relative;
     z-index: 1;
 }
 
 
 .formulario-main-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Aboreto', serif;
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 1.6;
     color: var(--text-dark);
     margin: 0 0 50px 0;
@@ -1379,8 +1387,8 @@ body {
 }
 
 .formulario-form-container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     background: white;
     padding: 50px 40px;
     border-radius: 20px;
@@ -1388,6 +1396,8 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.7s forwards;
+    position: sticky;
+    top: 20px;
 }
 
 .formulario-form-title {
@@ -1530,9 +1540,14 @@ body {
 
 /* Responsive Design para Formulario */
 @media (max-width: 1024px) {
+    .formulario-section .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .formulario-content {
         max-width: 800px;
-        margin-bottom: 60px;
+        margin: 0 auto 60px;
     }
 
     .formulario-main-title {
@@ -1540,7 +1555,10 @@ body {
     }
 
     .formulario-form-container {
+        max-width: 600px;
+        margin: 0 auto;
         padding: 40px 35px;
+        position: static;
     }
 
     .contact-profile-wrapper {
@@ -1557,8 +1575,14 @@ body {
         padding: 60px 0;
     }
 
+    .formulario-section .container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
     .formulario-content {
         margin-bottom: 50px;
+        padding: 0 5px;
     }
 
     .formulario-main-title {
@@ -1578,15 +1602,25 @@ body {
     }
 
     .formulario-form-container {
-        padding: 35px 25px;
+        padding: 40px 30px;
+        max-width: 100%;
+        margin: 0;
+        width: 100%;
     }
 
     .formulario-form-title {
         font-size: 1.6rem;
+        margin-bottom: 30px;
     }
 
     .formulario-contact-form {
-        gap: 20px;
+        gap: 22px;
+    }
+
+    .formulario-input,
+    .formulario-select {
+        padding: 16px 20px;
+        font-size: 1rem;
     }
 
     .contact-profile-wrapper {
@@ -1633,8 +1667,13 @@ body {
         padding: 40px 0;
     }
 
+    .formulario-section .container {
+        padding: 0 10px;
+    }
+
     .formulario-content {
         margin-bottom: 40px;
+        padding: 0;
     }
 
     .formulario-main-title {
@@ -1664,28 +1703,36 @@ body {
     }
 
     .formulario-form-container {
-        padding: 30px 20px;
+        padding: 35px 25px;
         border-radius: 15px;
+        max-width: 100%;
+        margin: 0;
+        width: 100%;
     }
 
     .formulario-form-title {
-        font-size: 1.4rem;
-        margin-bottom: 25px;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
     }
 
     .formulario-label {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .formulario-input,
     .formulario-select {
-        padding: 12px 16px;
-        font-size: 0.95rem;
+        padding: 15px 18px;
+        font-size: 1rem;
     }
 
     .formulario-submit-btn {
-        padding: 15px 30px;
-        font-size: 1rem;
+        padding: 16px 35px;
+        font-size: 1.05rem;
+        width: 100%;
+    }
+
+    .formulario-contact-form {
+        gap: 22px;
     }
 
     .contact-profile-wrapper {
@@ -1706,4 +1753,11 @@ body {
         font-size: 0.9rem;
     }
 
+    .properties {
+        padding: 20% 0 13% 0;
+    }
+    .espacios {
+        padding: 15% 0 !important;
+    }
+    
 }
