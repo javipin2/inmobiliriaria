@@ -2,45 +2,77 @@
 const properties = [
     {
         image: "https://ext.same-assets.com/1748467512/496956485.jpeg",
-        title: "ENCANTADOR APARTAMENTO DE DISEÑO EN EL CORAZÓN DEL RAVAL",
+        titleKey: "properties.list.1",
+        title: {
+            es: "ENCANTADOR APARTAMENTO DE DISEÑO EN EL CORAZÓN DEL RAVAL",
+            en: "CHARMING DESIGN APARTMENT IN THE HEART OF EL RAVAL",
+            ca: "ENCANTADOR APARTAMENT DE DISSENY AL COR DEL RAVAL"
+        },
         price: "489.000 €",
         alt: "Encantador Apartamento"
     },
     {
         image: "https://ext.same-assets.com/1748467512/2402669859.jpeg",
-        title: "ENCANTADOR PISO RENOVADO EN EL RAVAL",
+        titleKey: "properties.list.2",
+        title: {
+            es: "ENCANTADOR PISO RENOVADO EN EL RAVAL",
+            en: "CHARMING RENOVATED APARTMENT IN EL RAVAL",
+            ca: "ENCANTADOR PIS RENOVAT AL RAVAL"
+        },
         price: "292.000 €",
         alt: "Encantador piso renovado"
     },
     {
         image: "https://ext.same-assets.com/1748467512/684537922.jpeg",
-        title: "ESPECTACULAR CASA FAMILIAR EN BARCELONA CON JARDÍN PRIVADO",
+        titleKey: "properties.list.3",
+        title: {
+            es: "ESPECTACULAR CASA FAMILIAR EN BARCELONA CON JARDÍN PRIVADO",
+            en: "SPECTACULAR FAMILY HOUSE IN BARCELONA WITH PRIVATE GARDEN",
+            ca: "ESPECTACULAR CASA FAMILIAR A BARCELONA AMB JARDÍ PRIVAT"
+        },
         price: "1.400.000 €",
         alt: "Casa familiar"
     },
     {
         image: "https://ext.same-assets.com/1748467512/512189235.jpeg",
-        title: "ÁTICO ÚNICO CON TERRAZA PRIVADA Y VISTAS A LA SAGRADA FAMILIA",
+        titleKey: "properties.list.4",
+        title: {
+            es: "ÁTICO ÚNICO CON TERRAZA PRIVADA Y VISTAS A LA SAGRADA FAMILIA",
+            en: "UNIQUE PENTHOUSE WITH PRIVATE TERRACE AND VIEWS OF THE SAGRADA FAMILIA",
+            ca: "ÀTIC ÚNIC AMB TERRASSA PRIVADA I VISTES A LA SAGRADA FAMÍLIA"
+        },
         price: "319.000 €",
         alt: "Ático único"
     },
     {
         image: "https://ext.same-assets.com/1748467512/4091390319.jpeg",
-        title: "IMPRESIONANTE DÚPLEX CON VISTAS AL MAR Y DOS TERRAZAS PRIVADAS EN BARCELONA",
+        titleKey: "properties.list.5",
+        title: {
+            es: "IMPRESIONANTE DÚPLEX CON VISTAS AL MAR Y DOS TERRAZAS PRIVADAS EN BARCELONA",
+            en: "IMPRESSIVE DUPLEX WITH SEA VIEWS AND TWO PRIVATE TERRACES IN BARCELONA",
+            ca: "IMPRESSIONANT DÚPLEX AMB VISTES AL MAR I DUES TERRASSES PRIVADES A BARCELONA"
+        },
         price: "1.950.000 €",
         alt: "Dúplex"
     }
 ];
 
+// Función para obtener el título traducido
+function getPropertyTitle(property) {
+    const currentLang = localStorage.getItem('language') || 'es';
+    return property.title[currentLang] || property.title.es;
+}
+
 // Función para crear una tarjeta de propiedad (slide)
 function createPropertyCard(property) {
+    const title = getPropertyTitle(property);
     return `
         <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank" class="property-card">
             <div class="property-image">
-                <img src="${property.image}" alt="${property.alt || property.title}" loading="lazy">
+                <img src="${property.image}" alt="${property.alt || title}" loading="lazy">
             </div>
             <div class="property-info">
-                <h3 class="property-title">${property.title}</h3>
+                <h3 class="property-title">${title}</h3>
                 <p class="property-price">${property.price}</p>
             </div>
         </a>
@@ -174,4 +206,7 @@ function renderProperties() {
 
 // Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', renderProperties);
+
+// Hacer la función disponible globalmente para el sistema de traducciones
+window.renderProperties = renderProperties;
 

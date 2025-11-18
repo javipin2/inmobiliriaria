@@ -329,25 +329,63 @@ if (contactForm) {
         const transaccion = document.getElementById('transaccion').value;
         const ubicacion = document.getElementById('ubicacion').value.trim();
 
+        // Obtener el idioma actual
+        const currentLang = localStorage.getItem('language') || 'es';
+        const langTranslations = {
+            es: {
+                alert: 'Por favor, completa todos los campos del formulario.',
+                greeting: 'Hola, me gustaría solicitar información sobre una propiedad.',
+                contactData: 'Datos del contacto:',
+                name: 'Nombre',
+                phone: 'Teléfono',
+                transaction: 'Tipo de transacción',
+                location: 'Ubicación de interés',
+                thanks: 'Gracias por su atención.'
+            },
+            en: {
+                alert: 'Please fill in all form fields.',
+                greeting: 'Hello, I would like to request information about a property.',
+                contactData: 'Contact details:',
+                name: 'Name',
+                phone: 'Phone',
+                transaction: 'Transaction type',
+                location: 'Location of interest',
+                thanks: 'Thank you for your attention.'
+            },
+            ca: {
+                alert: 'Si us plau, completa tots els camps del formulari.',
+                greeting: 'Hola, m\'agradaria sol·licitar informació sobre una propietat.',
+                contactData: 'Dades del contacte:',
+                name: 'Nom',
+                phone: 'Telèfon',
+                transaction: 'Tipus de transacció',
+                location: 'Ubicació d\'interès',
+                thanks: 'Gràcies per la seva atenció.'
+            }
+        };
+
+        const t = langTranslations[currentLang];
+
         // Validar que todos los campos estén llenos
         if (!nombreCompleto || !numeroContacto || !transaccion || !ubicacion) {
-            alert('Por favor, completa todos los campos del formulario.');
+            alert(t.alert);
             return;
         }
 
-        // Formatear el nombre de la transacción
-        const transaccionTexto = transaccion.charAt(0).toUpperCase() + transaccion.slice(1);
+        // Obtener el texto de la transacción traducido
+        const transaccionSelect = document.getElementById('transaccion');
+        const transaccionTexto = transaccionSelect.options[transaccionSelect.selectedIndex].text;
 
         // Construir el mensaje para WhatsApp
-        const mensaje = `Hola, me gustaría solicitar información sobre una propiedad.
+        const mensaje = `${t.greeting}
 
-*Datos del contacto:*
-• Nombre: ${nombreCompleto}
-• Teléfono: ${numeroContacto}
-• Tipo de transacción: ${transaccionTexto}
-• Ubicación de interés: ${ubicacion}
+*${t.contactData}*
+• ${t.name}: ${nombreCompleto}
+• ${t.phone}: ${numeroContacto}
+• ${t.transaction}: ${transaccionTexto}
+• ${t.location}: ${ubicacion}
 
-Gracias por su atención.`;
+${t.thanks}`;
 
         // Número de WhatsApp (sin espacios ni caracteres especiales)
         const whatsappNumber = '34651640323';
