@@ -61,6 +61,9 @@ const translations = {
         },
         whatsapp: {
             message: "Hola, me gustaría solicitar información"
+        },
+        language: {
+            button: "Lenguaje"
         }
     },
     en: {
@@ -124,6 +127,9 @@ const translations = {
         },
         whatsapp: {
             message: "Hello, I would like to request information"
+        },
+        language: {
+            button: "Language"
         }
     },
     ca: {
@@ -187,6 +193,9 @@ const translations = {
         },
         whatsapp: {
             message: "Hola, m'agradaria sol·licitar informació"
+        },
+        language: {
+            button: "Idioma"
         }
     }
 };
@@ -202,26 +211,52 @@ class LanguageSwitcher {
         // Set initial language
         this.setLanguage(this.currentLang);
         
-        // Add event listeners to language buttons
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const lang = e.currentTarget.getAttribute('data-lang');
-                this.setLanguage(lang);
+        // Language dropdown functionality
+        const languageBtn = document.getElementById('languageBtn');
+        const languageMenu = document.getElementById('languageMenu');
+        
+        if (languageBtn && languageMenu) {
+            // Toggle menu on button click
+            languageBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isActive = languageMenu.classList.contains('active');
+                languageMenu.classList.toggle('active');
+                languageBtn.setAttribute('aria-expanded', !isActive);
             });
-        });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!languageBtn.contains(e.target) && !languageMenu.contains(e.target)) {
+                    languageMenu.classList.remove('active');
+                    languageBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Add event listeners to language options
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const lang = option.getAttribute('data-lang');
+                    this.setLanguage(lang);
+                    languageMenu.classList.remove('active');
+                    languageBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
     }
 
     setLanguage(lang) {
         this.currentLang = lang;
         localStorage.setItem('language', lang);
         
-        // Update active button
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
+        // Update active language option
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.classList.remove('active');
+            if (option.getAttribute('data-lang') === lang) {
+                option.classList.add('active');
             }
         });
+        
         
         // Update document title and meta description if needed
         if (lang === 'es') {

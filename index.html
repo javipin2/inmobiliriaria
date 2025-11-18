@@ -26,13 +26,39 @@
             <div class="hero-logo">
                 <img src="images/logoblanco1.png" alt="AG Servivicios">
             </div>
-            <a href="#" class="hero-instagram" aria-label="Instagram">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
+            <div class="hero-actions">
+                <div class="language-dropdown">
+                    <button class="hero-language-btn" id="languageBtn" aria-label="Lenguaje" aria-expanded="false">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="language-btn-text" data-i18n="language.button">Lenguaje</span>
+                    </button>
+                    <div class="language-menu" id="languageMenu">
+                        <button class="language-option" data-lang="es">
+                            <img src="https://flagcdn.com/w20/es.png" alt="España" class="flag-icon-small">
+                            <span>Español</span>
+                        </button>
+                        <button class="language-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="Reino Unido" class="flag-icon-small">
+                            <span>English</span>
+                        </button>
+                        <button class="language-option" data-lang="ca">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" alt="Cataluña" class="flag-icon-small">
+                            <span>Català</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" class="hero-instagram" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
         </div>
         <div class="hero-content">
             <p class="hero-title" data-i18n="hero.title">¿VENTA, COMPRA O ALQUILLER?</p>
@@ -394,19 +420,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Language Switcher Buttons -->
-    <div class="language-switcher">
-        <button class="lang-btn" data-lang="es" aria-label="Español" title="Español">
-            <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag-icon">
-        </button>
-        <button class="lang-btn" data-lang="en" aria-label="English" title="English">
-            <img src="https://flagcdn.com/w40/gb.png" alt="Reino Unido" class="flag-icon">
-        </button>
-        <button class="lang-btn" data-lang="ca" aria-label="Català" title="Català">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" alt="Cataluña" class="flag-icon">
-        </button>
-    </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/34651640323?text=Hola,%20me%20gustaría%20solicitar%20información"

@@ -61,6 +61,12 @@ body {
     transition: all 0.3s ease;
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -91,34 +97,121 @@ body {
     transform: scale(1.05);
 }
 
+.hero-language-btn,
 .hero-instagram {
-    width: 50px;
+    width: auto;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+    border-radius: 50px;
     color: white;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
+    padding: 0 18px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
 }
 
+.hero-language-btn:hover,
 .hero-instagram:hover {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px) scale(1.1);
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 255, 255, 0.3);
 }
 
+.hero-language-btn svg,
 .hero-instagram svg {
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
+.hero-language-btn:hover svg,
 .hero-instagram:hover svg {
     transform: rotate(10deg) scale(1.1);
+}
+
+.language-btn-text {
+    white-space: nowrap;
+}
+
+.hero-instagram {
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* Language Dropdown Menu */
+.language-dropdown {
+    position: relative;
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.language-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.language-option:hover {
+    background: rgba(72, 180, 213, 0.1);
+    color: var(--primary-color);
+}
+
+.language-option.active {
+    background: rgba(72, 180, 213, 0.15);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.flag-icon-small {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
 }
 
 /* Hero Section */
@@ -983,51 +1076,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Language Switcher */
-.language-switcher {
-    position: fixed;
-    bottom: 110px;
-    right: 45px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-}
-
-.lang-btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.lang-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    border-color: var(--primary-color);
-}
-
-.lang-btn.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(72, 180, 213, 0.3);
-}
-
-.flag-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
 
 /* WhatsApp Floating Button */
 .whatsapp-float {
@@ -1092,6 +1140,10 @@ body {
         padding: 25px 30px;
     }
 
+    .hero-actions {
+        gap: 12px;
+    }
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1110,14 +1162,26 @@ body {
         height: 60px;
     }
 
-    .hero-instagram {
-        width: 45px;
-        height: 45px;
+    .hero-actions {
+        gap: 10px;
     }
 
+    .hero-language-btn,
+    .hero-instagram {
+        height: 45px;
+        padding: 0 15px;
+        font-size: 0.85rem;
+    }
+
+    .hero-language-btn svg,
     .hero-instagram svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .hero-instagram {
+        width: 45px;
+        padding: 0;
     }
 
     .hero-title {
@@ -1253,16 +1317,6 @@ body {
         height: 28px;
     }
 
-    .language-switcher {
-        bottom: 100px;
-        right: 30px;
-        gap: 8px;
-    }
-
-    .lang-btn {
-        width: 28px;
-        height: 28px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1274,14 +1328,36 @@ body {
         height: 50px;
     }
 
-    .hero-instagram {
-        width: 40px;
-        height: 40px;
+    .hero-actions {
+        gap: 8px;
     }
 
+    .hero-language-btn,
+    .hero-instagram {
+        height: 40px;
+        padding: 0 12px;
+        font-size: 0.8rem;
+    }
+
+    .hero-language-btn svg,
     .hero-instagram svg {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .hero-language-btn {
+        padding: 0 10px;
+        font-size: 0.75rem;
+    }
+
+    .hero-instagram {
+        width: 40px;
+        padding: 0;
+    }
+
+    .language-menu {
+        min-width: 160px;
+        right: 0;
     }
 
     .hero-title {
@@ -1386,16 +1462,6 @@ body {
         height: 24px;
     }
 
-    .language-switcher {
-        bottom: 90px;
-        right: 23px;
-        gap: 6px;
-    }
-
-    .lang-btn {
-        width: 25px;
-        height: 25px;
-    }
 }
 
 /* Scroll animations */
