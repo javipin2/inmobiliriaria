@@ -361,6 +361,16 @@ if (contactForm) {
                 transaction: 'Tipus de transacció',
                 location: 'Ubicació d\'interès',
                 thanks: 'Gràcies per la seva atenció.'
+            },
+            de: {
+                alert: 'Bitte füllen Sie alle Formularfelder aus.',
+                greeting: 'Hallo, ich möchte Informationen über eine Immobilie anfordern.',
+                contactData: 'Kontaktdaten:',
+                name: 'Name',
+                phone: 'Telefon',
+                transaction: 'Transaktionstyp',
+                location: 'Gewünschter Standort',
+                thanks: 'Vielen Dank für Ihre Aufmerksamkeit.'
             }
         };
 

@@ -1,59 +1,30 @@
 // Array con los datos de las propiedades
 const properties = [
     {
-        image: "https://ext.same-assets.com/1748467512/496956485.jpeg",
+        image: "https://img4.idealista.com/blur/480_360_mq/0/id.pro.es.image.master/b3/67/d2/1388459748.webp",
         titleKey: "properties.list.1",
         title: {
-            es: "ENCANTADOR APARTAMENTO DE DISEÑO EN EL CORAZÓN DEL RAVAL",
-            en: "CHARMING DESIGN APARTMENT IN THE HEART OF EL RAVAL",
-            ca: "ENCANTADOR APARTAMENT DE DISSENY AL COR DEL RAVAL"
+            es: "Piso en venta en Horta, Guinardó - Barcelona",
+            en: "Apartment for sale in Horta, Guinardó - Barcelona",
+            ca: "Pis en venda a Horta, Guinardó - Barcelona",
+            de: "Wohnung zum Verkauf in Horta, Guinardó - Barcelona"
         },
-        price: "489.000 €",
-        alt: "Encantador Apartamento"
+        price: "285.000 €",
+        alt: "Piso en venta en Horta, Guinardó - Barcelona",
+        link: "https://www.idealista.com/pro/ag-servicios-inmobiliarios/inmueble/109882563/" // Agregar el link aquí
     },
     {
-        image: "https://ext.same-assets.com/1748467512/2402669859.jpeg",
+        image: "https://img4.idealista.com/blur/480_360_mq/0/id.pro.es.image.master/c0/45/3b/1382200947.webp",
         titleKey: "properties.list.2",
         title: {
-            es: "ENCANTADOR PISO RENOVADO EN EL RAVAL",
-            en: "CHARMING RENOVATED APARTMENT IN EL RAVAL",
-            ca: "ENCANTADOR PIS RENOVAT AL RAVAL"
+            es: "Chalet adosado en venta en Calle de París, Creu de Barberà - Sabadell",
+            en: "Terraced house for sale on París Street, Creu de Barberà - Sabadell",
+            ca: "Xalet adossat en venda al Carrer de París, Creu de Barberà - Sabadell",
+            de: "Reihenhaus zum Verkauf in der París Straße, Creu de Barberà - Sabadell"
         },
-        price: "292.000 €",
-        alt: "Encantador piso renovado"
-    },
-    {
-        image: "https://ext.same-assets.com/1748467512/684537922.jpeg",
-        titleKey: "properties.list.3",
-        title: {
-            es: "ESPECTACULAR CASA FAMILIAR EN BARCELONA CON JARDÍN PRIVADO",
-            en: "SPECTACULAR FAMILY HOUSE IN BARCELONA WITH PRIVATE GARDEN",
-            ca: "ESPECTACULAR CASA FAMILIAR A BARCELONA AMB JARDÍ PRIVAT"
-        },
-        price: "1.400.000 €",
-        alt: "Casa familiar"
-    },
-    {
-        image: "https://ext.same-assets.com/1748467512/512189235.jpeg",
-        titleKey: "properties.list.4",
-        title: {
-            es: "ÁTICO ÚNICO CON TERRAZA PRIVADA Y VISTAS A LA SAGRADA FAMILIA",
-            en: "UNIQUE PENTHOUSE WITH PRIVATE TERRACE AND VIEWS OF THE SAGRADA FAMILIA",
-            ca: "ÀTIC ÚNIC AMB TERRASSA PRIVADA I VISTES A LA SAGRADA FAMÍLIA"
-        },
-        price: "319.000 €",
-        alt: "Ático único"
-    },
-    {
-        image: "https://ext.same-assets.com/1748467512/4091390319.jpeg",
-        titleKey: "properties.list.5",
-        title: {
-            es: "IMPRESIONANTE DÚPLEX CON VISTAS AL MAR Y DOS TERRAZAS PRIVADAS EN BARCELONA",
-            en: "IMPRESSIVE DUPLEX WITH SEA VIEWS AND TWO PRIVATE TERRACES IN BARCELONA",
-            ca: "IMPRESSIONANT DÚPLEX AMB VISTES AL MAR I DUES TERRASSES PRIVADES A BARCELONA"
-        },
-        price: "1.950.000 €",
-        alt: "Dúplex"
+        price: "220.000 €",
+        alt: "Chalet adosado en venta en Calle de París, Creu de Barberà - Sabadell",
+        link: "https://www.idealista.com/pro/ag-servicios-inmobiliarios/inmueble/109678480/" // Agregar el link aquí
     }
 ];
 
@@ -66,8 +37,9 @@ function getPropertyTitle(property) {
 // Función para crear una tarjeta de propiedad (slide)
 function createPropertyCard(property) {
     const title = getPropertyTitle(property);
+    const link = property.link || "https://www.idealista.com/pro/ag-servicios-inmobiliarios/";
     return `
-        <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank" class="property-card">
+        <a href="${link}" target="_blank" class="property-card">
             <div class="property-image">
                 <img src="${property.image}" alt="${property.alt || title}" loading="lazy">
             </div>

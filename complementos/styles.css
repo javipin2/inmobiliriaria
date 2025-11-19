@@ -25,11 +25,11 @@
 }
 
 .header-content h1 {
-    font-family: 'Aboreto', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     margin-bottom: 15px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     line-height: 1.4;
 }
 
@@ -192,18 +192,22 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
     font-weight: 300;
+    -webkit-tap-highlight-color: rgba(146, 106, 46, 0.3);
 }
 
 .carousel-button:hover:not(:disabled) {
     transform: translateY(-50%) scale(1.1);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: #926a2e;
+    border-color: #926a2e;
+    box-shadow: 0 8px 30px rgba(146, 106, 46, 0.4);
     color: white;
 }
 
 .carousel-button:active:not(:disabled) {
     transform: translateY(-50%) scale(0.95);
+    background: #926a2e;
+    border-color: #926a2e;
+    color: white;
 }
 
 .carousel-button:disabled {

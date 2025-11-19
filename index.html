@@ -14,7 +14,7 @@
     <script src="complementos/properties.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Aboreto&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Aboreto&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -29,10 +29,13 @@
             <div class="hero-actions">
                 <div class="language-dropdown">
                     <button class="hero-language-btn" id="languageBtn" aria-label="Lenguaje" aria-expanded="false">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
                         </svg>
                         <span class="language-btn-text" data-i18n="language.button">Lenguaje</span>
                     </button>
@@ -46,8 +49,13 @@
                             <span>English</span>
                         </button>
                         <button class="language-option" data-lang="ca">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" alt="Cataluña" class="flag-icon-small">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg"
+                                alt="Cataluña" class="flag-icon-small">
                             <span>Català</span>
+                        </button>
+                        <button class="language-option" data-lang="de">
+                            <img src="https://flagcdn.com/w20/de.png" alt="Alemania" class="flag-icon-small">
+                            <span>Deutsch</span>
                         </button>
                     </div>
                 </div>
@@ -64,8 +72,10 @@
             <p class="hero-title" data-i18n="hero.title">¿VENTA, COMPRA O ALQUILLER?</p>
             <p class="hero-subtitle" data-i18n="hero.subtitle">Facilitamos todo para ti!</p>
             <div class="hero-definition">
-                <p class="definition-text" data-i18n="hero.text">Sabemos que mudarse, vender o invertir puede ser complicado.
-                    Tú tomas la decisión, nosotros hacemos el resto para que sea fácil y seguro.</p>
+                <p class="definition-text" data-i18n="hero.text">Comprar, vender o invertir es tu
+                    objetivo; hacerlo sencillo y seguro es el
+                    nuestro. Tú tomas la decisión, nosotros
+                    nos encargamos de tu tranquilidad.</p>
             </div>
         </div>
     </section>
@@ -74,7 +84,8 @@
     <section class="main-heading">
         <div class="container espacios">
             <h2 class="section-title" data-i18n="main.heading">Buscas un nuevo hogar o una inversión?</h2>
-            <p class="section-description" data-i18n="main.description">Explora nuestras propiedades disponibles para comprar o alquilar, sin
+            <p class="section-description" data-i18n="main.description">Explora nuestras propiedades disponibles para
+                comprar o alquilar, sin
                 complicaciones.</p>
             <a href="https://wa.me/34651640323?text=Hola,%20me%20gustaría%20solicitar%20información"
                 class="btn-primary whatsapp-btn" target="_blank" data-i18n="main.button">
@@ -93,35 +104,37 @@
             <div class="services-grid">
                 <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank"
                     class="service-card">
-                    <img src="https://www.paginasamarillas.com.co/_next/image?url=https%3A%2F%2Fwww.paginasamarillas.com.co%2Fimagenes%2Fco%2Fimages%2Fad_id_26075%2Fimage_id_148914.jpeg&w=1920&q=70" alt="Venta">
+                    <img src="https://www.paginasamarillas.com.co/_next/image?url=https%3A%2F%2Fwww.paginasamarillas.com.co%2Fimagenes%2Fco%2Fimages%2Fad_id_26075%2Fimage_id_148914.jpeg&w=1920&q=70"
+                        alt="Venta">
                     <div class="service-overlay">
                         <h3 class="service-title" data-i18n="services.sale">VENTA</h3>
                     </div>
                 </a>
                 <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank"
                     class="service-card">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Compra">
+                    <img src="https://invertirconvision.com.gt/wp-content/uploads/2024/02/%C2%BFCua%CC%81ndo-es-el-mejor-momento-para-comprar-un-apartamento-%C2%A1Ahora-portada.jpg" alt="Compra">
                     <div class="service-overlay">
                         <h3 class="service-title" data-i18n="services.purchase">COMPRA</h3>
                     </div>
                 </a>
                 <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/alquiler-viviendas/" target="_blank"
                     class="service-card">
-                    <img src="https://www.vestabarcelona.com/content/images/size/w1304/format/webp/2025/02/home-staging-que-es.png" alt="Alquiler">
+                    <img src="https://www.vestabarcelona.com/content/images/size/w1304/format/webp/2025/02/home-staging-que-es.png"
+                        alt="Alquiler">
                     <div class="service-overlay">
                         <h3 class="service-title" data-i18n="services.rent">ALQUILER</h3>
                     </div>
                 </a>
-                <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank"
-                    class="service-card">
-                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&q=80" alt="Administración de pisos">
+                <a href="#property-management" class="service-card">
+                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&q=80"
+                        alt="Administración de pisos">
                     <div class="service-overlay">
                         <h3 class="service-title" data-i18n="services.management">ADMINISTRACIÓN DE PISOS</h3>
                     </div>
                 </a>
-                <a href="https://www.idealista.com/pro/ag-servicios-inmobiliarios/" target="_blank"
-                    class="service-card">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80" alt="Personal shopper inmobiliario">
+                <a href="#formulario" class="service-card">
+                    <img src="https://plusrender.com/wp-content/uploads/2023/03/Blue-Work-From-Home-YouTube-Thumbnail-1.png"
+                        alt="Personal shopper inmobiliario">
                     <div class="service-overlay">
                         <h3 class="service-title" data-i18n="services.shopper">PERSONAL SHOPPER INMOBILIARIO</h3>
                     </div>
@@ -143,7 +156,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="features.1">Más que vender, te acompañamos en un momento importante. Para nosotros
+                    <h3 class="feature-title" data-i18n="features.1">Más que vender, te acompañamos en un momento
+                        importante. Para nosotros
                         cada cliente es unico.</h3>
                 </div>
                 <div class="feature-item">
@@ -155,7 +169,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="features.2">Trabajamos con una cartera pequena. Apuntamos a la calidad y dedicación y
+                    <h3 class="feature-title" data-i18n="features.2">Trabajamos con una cartera pequena. Apuntamos a la
+                        calidad y dedicación y
                         no al volumen.</h3>
                 </div>
                 <div class="feature-item">
@@ -167,7 +182,8 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="feature-title" data-i18n="features.3">Comprendemos tus necesidades y te ayudamos a tomar tus decisiones desde la
+                    <h3 class="feature-title" data-i18n="features.3">Comprendemos tus necesidades y te ayudamos a tomar
+                        tus decisiones desde la
                         tranquilidad y la confianza.</h3>
                 </div>
                 <div class="feature-item">
@@ -188,8 +204,10 @@
     <!-- Properties Section -->
     <section class="properties">
         <div class="container">
-            <h2 class="section-title" data-i18n="properties.title">EXPERTOS EN REAL ESTATE: COMPRA, VENTA Y ALQUILER</h2>
-            <p class="section-description" data-i18n="properties.description">Te acompañamos en cada etapa de tu proceso inmobiliario. Ya sea que busques
+            <h2 class="section-title" data-i18n="properties.title">EXPERTOS EN REAL ESTATE: COMPRA, VENTA Y ALQUILER
+            </h2>
+            <p class="section-description" data-i18n="properties.description">Te acompañamos en cada etapa de tu proceso
+                inmobiliario. Ya sea que busques
                 el hogar de tus sueños, quieras vender tu propiedad al mejor precio o necesites una gestión eficiente,
                 estamos aquí para ti.</p>
 
@@ -200,27 +218,45 @@
                 </div>
                 <button class="carousel-button next" id="nextProperties" aria-label="Siguiente">&#10095;</button>
             </div>
+        </div>
+    </section>
 
+
+    <!-- Property Management Section -->
+    <section class="property-management" id="property-management">
+        <div class="container">
+            <h2 class="section-title" data-i18n="management.title">ADMINISTRACION DE PISOS</h2>
+            <h3 class="management-subtitle" data-i18n="management.subtitle">Tu Alquiler sin Estrés.</h3>
+            <p class="section-description" data-i18n="management.description">Olvídate de las preocupaciones. Nos encargamos de la gestión integral de tu
+                propiedad: desde la selección rigurosa del inquilino y la redacción de contratos,
+                hasta el cobro de rentas, mantenimiento y la resolución de cualquier incidencia. Tu
+                patrimonio es nuestra prioridad.</p>
             <div class="text-center">
-                <a href="https://wa.me/34651640323?text=Hola,%20me%20gustaría%20solicitar%20información"
-                    class="btn-outline whatsapp-btn" target="_blank" data-i18n="properties.button">
+                <a href="https://wa.me/34651640323?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20administración%20de%20pisos"
+                    class="btn-primary whatsapp-btn" target="_blank" data-i18n="management.button">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                    <span data-i18n="properties.button">Ver inmuebles</span>
+                    <span data-i18n="management.button">Contactar</span>
                 </a>
             </div>
         </div>
     </section>
 
 
-    <section class="formulario-section">
+    <section class="formulario-section" id="formulario">
         <div class="container">
             <div class="formulario-content">
                 <h2 class="formulario-main-title" data-i18n="form.title">
-                    Tu nos cuentas lo que necesitas y nos encargamos del resto. Analizamos y filtramos las mejores
-                    opciones que se adapten a ti.
+                    Comprar, vender o invertir es
+                    tu objetivo; hacerlo sencillo y
+                    seguro es el nuestro. Tú
+                    tomas la decisión y nosotros,
+                    como tu personal shopper
+                    inmobiliario, nos
+                    encargamos de tu
+                    tranquilidad.
                 </h2>
 
                 <div class="formulario-separator"></div>
@@ -240,7 +276,8 @@
                                 <line x1="15.5" y1="8.5" x2="8.5" y2="15.5"></line>
                             </svg>
                         </div>
-                        <p class="formulario-feature-text" data-i18n="form.feature1">Definición de las necesidades y cualidades</p>
+                        <p class="formulario-feature-text" data-i18n="form.feature1">Definición de las necesidades y
+                            cualidades</p>
                     </div>
 
                     <div class="formulario-feature-item">
@@ -272,19 +309,23 @@
 
                 <form class="formulario-contact-form" id="contactForm">
                     <div class="formulario-form-group">
-                        <label for="nombreCompleto" class="formulario-label" data-i18n="form.nameLabel">Nombre completo:</label>
+                        <label for="nombreCompleto" class="formulario-label" data-i18n="form.nameLabel">Nombre
+                            completo:</label>
                         <input type="text" id="nombreCompleto" name="nombreCompleto" class="formulario-input"
-                            data-i18n-placeholder="form.namePlaceholder" placeholder="Ingresa tu nombre completo" required>
+                            data-i18n-placeholder="form.namePlaceholder" placeholder="Ingresa tu nombre completo"
+                            required>
                     </div>
 
                     <div class="formulario-form-group">
-                        <label for="numeroContacto" class="formulario-label" data-i18n="form.phoneLabel">Número de contacto:</label>
+                        <label for="numeroContacto" class="formulario-label" data-i18n="form.phoneLabel">Número de
+                            contacto:</label>
                         <input type="tel" id="numeroContacto" name="numeroContacto" class="formulario-input"
                             data-i18n-placeholder="form.phonePlaceholder" placeholder="Ej: +34 651 640 323" required>
                     </div>
 
                     <div class="formulario-form-group">
-                        <label for="transaccion" class="formulario-label" data-i18n="form.transactionLabel">Transacción:</label>
+                        <label for="transaccion" class="formulario-label"
+                            data-i18n="form.transactionLabel">Transacción:</label>
                         <select id="transaccion" name="transaccion" class="formulario-select" required>
                             <option value="" data-i18n="form.selectOption">Selecciona una opción</option>
                             <option value="compra" data-i18n="form.optionBuy">Compra</option>
@@ -294,9 +335,11 @@
                     </div>
 
                     <div class="formulario-form-group">
-                        <label for="ubicacion" class="formulario-label" data-i18n="form.locationLabel">Ubicación:</label>
+                        <label for="ubicacion" class="formulario-label"
+                            data-i18n="form.locationLabel">Ubicación:</label>
                         <input type="text" id="ubicacion" name="ubicacion" class="formulario-input"
-                            data-i18n-placeholder="form.locationPlaceholder" placeholder="Ej: Barcelona, Eixample" required>
+                            data-i18n-placeholder="form.locationPlaceholder" placeholder="Ej: Barcelona, Eixample"
+                            required>
                     </div>
 
                     <button type="submit" class="formulario-submit-btn">
@@ -323,7 +366,8 @@
                 <div class="contact-profile-content-column">
                     <h2 class="contact-profile-name">Adrián González Ortiz</h2>
 
-                    <p class="contact-profile-description" data-i18n="contact.description">Asesor inmobiliario con más de 10 años de experiencia en el
+                    <p class="contact-profile-description" data-i18n="contact.description">Asesor inmobiliario con más
+                        de 10 años de experiencia en el
                         sector,
                         trabajando en Barcelona y sus zonas aledañas. Se dedica a la venta y alquiler de bienes
                         inmuebles,
@@ -372,9 +416,10 @@
                     <span class="rating-text" data-i18n="testimonials.badge">EXCELENTE REPUTACIÓN</span>
                 </div>
                 <h1 data-i18n="testimonials.title">¿Qué dicen nuestros clientes sobre AG SERVICIOS INMOBILIARIOS?</h1>
-                <p data-i18n="testimonials.subtitle">Descubre las opiniones y mejoras de nuestros queridos clientes en Google sobre AG SERVICIOS INMOBILIARIOS</p>
+                <p data-i18n="testimonials.subtitle">Descubre las opiniones y mejoras de nuestros queridos clientes en
+                    Google sobre AG SERVICIOS INMOBILIARIOS</p>
             </div>
-    
+
             <div class="button-container">
                 <a href="https://www.google.com/maps/place/AG+SERVICIOS+INMOBILIARIOS/@41.429156,2.1601358,17z/data=!3m1!4b1!4m6!3m5!1s0x12a4bd6a1bad5a3b:0xf65fe6ad6911ac3e!8m2!3d41.429156!4d2.1601358!16s%2Fg%2F11ymky20qt?hl=es&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank" class="review-button" data-i18n="testimonials.button">Escribir una reseña</a>
