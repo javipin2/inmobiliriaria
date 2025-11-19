@@ -51,6 +51,8 @@ const translations = {
             optionBuy: "Compra",
             optionSell: "Venta",
             optionRent: "Alquiler",
+            optionManagement: "Administración de pisos",
+            optionShopper: "Personal shopper inmobiliario",
             locationLabel: "Ubicación:",
             locationPlaceholder: "Ej: Barcelona, Eixample",
             submit: "Enviar"
@@ -124,6 +126,8 @@ const translations = {
             optionBuy: "Purchase",
             optionSell: "Sale",
             optionRent: "Rent",
+            optionManagement: "Apartment Management",
+            optionShopper: "Real estate personal shopper",
             locationLabel: "Location:",
             locationPlaceholder: "E.g: Barcelona, Eixample",
             submit: "Send"
@@ -197,6 +201,8 @@ const translations = {
             optionBuy: "Compra",
             optionSell: "Venda",
             optionRent: "Lloguer",
+            optionManagement: "Administració de pisos",
+            optionShopper: "Personal shopper immobiliari",
             locationLabel: "Ubicació:",
             locationPlaceholder: "Ex: Barcelona, Eixample",
             submit: "Enviar"
@@ -270,6 +276,8 @@ const translations = {
             optionBuy: "Kauf",
             optionSell: "Verkauf",
             optionRent: "Miete",
+            optionManagement: "Wohnungsverwaltung",
+            optionShopper: "Immobilien-Personal Shopper",
             locationLabel: "Standort:",
             locationPlaceholder: "z.B: Barcelona, Eixample",
             submit: "Senden"
